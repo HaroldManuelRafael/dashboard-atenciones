@@ -23,14 +23,10 @@ Permitir el seguimiento de:
 - lugar de atención;
 - canal;
 - área responsable;
-- motivos de consulta;
-- resolución;
-- resolución al primer contacto;
-- casos derivados;
-- top de motivos de consulta;
 - estados de resolución;
 - resolución al primer contacto;
 - casos derivados;
+- motivos de consulta y su top;
 - tabla de detalle.
 
 ## Arquitectura
@@ -141,3 +137,7 @@ No versionar datos personales reales. La integración con Google Sheets debe uti
 ## Estado actual
 
 El dashboard local funciona con el dataset ficticio incluido, filtros, KPIs, gráficos y tabla de detalle. La integración productiva con Google Sheets aún está pendiente.
+
+## Licencia
+
+Este proyecto se distribuye bajo la [MIT License](LICENSE).
