@@ -1,0 +1,31 @@
+fecha_hora,codigo_estudiante,nombre_estudiante,correo,celular,campus,motivo_consulta,detalle_consulta,area_responsable,canal_atencion,lugar_atencion,estado,resuelto_primer_contacto,derivado,area_derivacion,observacion
+2026-09-28 09:10:00,E0001,Ana Torres,ana.torres@example.com,900000001,Huancayo,Certificado de estudios,Solicita orientación para tramitar certificado,Registros Académicos,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-09-28 09:35:00,E0002,Luis Mendoza,luis.mendoza@example.com,900000002,Huancayo,Problema de matrícula,No visualiza su matrícula activa,CAS,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-09-28 10:05:00,E0003,Carla Rojas,carla.rojas@example.com,900000003,Cusco,Convalidación,Consulta requisitos para convalidar estudios,Convalidaciones,Correo,SIC Cusco,Derivado,False,True,Convalidaciones,Se envió información de contacto
+2026-09-28 10:40:00,E0004,Diego Salazar,diego.salazar@example.com,900000004,Huancayo,Aula virtual,Actividad no visible en plataforma,Calidad Educativa,Presencial,UC Huancayo,Pendiente,False,True,Calidad Educativa,Se reportó incidencia
+2026-09-28 11:20:00,E0005,María Flores,maria.flores@example.com,900000005,Arequipa,Verificación de pago,Pago realizado aún no reflejado,CAS,CRM,SIC Arequipa,Resuelto,False,False,,Validado con sistema
+2026-09-29 08:55:00,E0006,José Quispe,jose.quispe@example.com,900000006,Huancayo,Cambio de horario,Solicita cambio de horario por trabajo,Atención y Soluciones,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-09-29 09:25:00,E0007,Lucía Ramos,lucia.ramos@example.com,900000007,Huancayo,Certificado de estudios,Consulta costo y tiempo de entrega,Registros Académicos,Correo,UC Huancayo,Resuelto,True,False,,
+2026-09-29 10:15:00,E0008,Pedro Huamán,pedro.huaman@example.com,900000008,Huánuco,Libro y código de activación,Código no funciona,Atención y Soluciones,CRM,SIC Huánuco,Pendiente,False,True,Calidad Educativa,Se solicitó revisión
+2026-09-29 11:05:00,E0009,Rosa Paredes,rosa.paredes@example.com,900000009,Cusco,Retiro de curso,Solicita información sobre retiro,CAS,Presencial,UC Cusco,Resuelto,True,False,,
+2026-09-29 15:20:00,E0010,Miguel Castro,miguel.castro@example.com,900000010,Huancayo,Inasistencia,Consulta justificación de faltas,Calidad Educativa,Presencial,UC Huancayo,Derivado,False,True,Calidad Educativa,
+2026-09-30 09:00:00,E0011,Sofía Vega,sofia.vega@example.com,900000011,Huancayo,Problema de matrícula,No puede seleccionar curso,CAS,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-09-30 09:50:00,E0012,Jorge Núñez,jorge.nunez@example.com,900000012,Cusco,Certificado de estudios,Solicita constancia de estudios,Registros Académicos,Correo,SIC Cusco,Resuelto,True,False,,
+2026-09-30 10:30:00,E0013,Elena Chávez,elena.chavez@example.com,900000013,Arequipa,Convalidación,Consulta estado de expediente,Convalidaciones,CRM,SIC Arequipa,Pendiente,False,True,Convalidaciones,
+2026-09-30 14:10:00,E0014,Marco Herrera,marco.herrera@example.com,900000014,Huancayo,Examen,Consulta fecha de evaluación,Calidad Educativa,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-09-30 16:05:00,E0015,Patricia Díaz,patricia.diaz@example.com,900000015,Huancayo,Cambio de modalidad,Desea cambiar de presencial a virtual,Atención y Soluciones,Correo,UC Huancayo,Resuelto,True,False,,
+2026-10-01 08:45:00,E0016,Renzo Campos,renzo.campos@example.com,900000016,Huancayo,Verificación de pago,Pago no visualizado,CAS,CRM,SIC Huancayo,Pendiente,False,True,CAS,
+2026-10-01 09:30:00,E0017,Daniela Soto,daniela.soto@example.com,900000017,Cusco,Libro y código de activación,No recibió código,Atención y Soluciones,Correo,SIC Cusco,Resuelto,True,False,,
+2026-10-01 10:15:00,E0018,Andrés Peña,andres.pena@example.com,900000018,Huancayo,Aula virtual,Curso no aparece en plataforma,Calidad Educativa,Presencial,UC Huancayo,Derivado,False,True,Calidad Educativa,
+2026-10-01 11:40:00,E0019,Valeria León,valeria.leon@example.com,900000019,Huánuco,Certificado de estudios,Consulta procedimiento de solicitud,Registros Académicos,Correo,SIC Huánuco,Resuelto,True,False,,
+2026-10-01 15:30:00,E0020,Carlos Medina,carlos.medina@example.com,900000020,Huancayo,Problema de matrícula,Matrícula bloqueada por deuda,CAS,Presencial,UC Huancayo,Derivado,False,True,CAS,
+2026-10-02 09:05:00,E0021,Gabriela Ruiz,gabriela.ruiz@example.com,900000021,Huancayo,Cambio de horario,Solicita revisar disponibilidad,Atención y Soluciones,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-10-02 09:55:00,E0022,Fernando Espinoza,fernando.espinoza@example.com,900000022,Cusco,Certificado de estudios,Solicita certificado para trámite externo,Registros Académicos,Correo,SIC Cusco,Resuelto,True,False,,
+2026-10-02 10:35:00,E0023,Melissa Cabrera,melissa.cabrera@example.com,900000023,Arequipa,Inasistencia,Consulta recuperación de clase,Calidad Educativa,CRM,SIC Arequipa,Pendiente,False,True,Calidad Educativa,
+2026-10-02 11:50:00,E0024,Raúl Aguilar,raul.aguilar@example.com,900000024,Huancayo,Convalidación,Consulta requisitos de convalidación,Convalidaciones,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-10-02 16:00:00,E0025,Paola Reyes,paola.reyes@example.com,900000025,Huancayo,Verificación de pago,Pago duplicado,CAS,Correo,UC Huancayo,Derivado,False,True,CAS,Se solicitó revisión
+2026-10-03 08:50:00,E0026,Kevin López,kevin.lopez@example.com,900000026,Huancayo,Problema de matrícula,Curso no disponible,CAS,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-10-03 09:40:00,E0027,Natalia Vera,natalia.vera@example.com,900000027,Cusco,Libro y código de activación,Libro no aparece en plataforma,Atención y Soluciones,Correo,SIC Cusco,Resuelto,True,False,,
+2026-10-03 10:20:00,E0028,Alonso García,alonso.garcia@example.com,900000028,Huancayo,Certificado de estudios,Consulta tiempo de entrega,Registros Académicos,Presencial,UC Huancayo,Resuelto,True,False,,
+2026-10-03 11:15:00,E0029,Fiorella Romero,fiorella.romero@example.com,900000029,Huánuco,Examen,Consulta reprogramación,Calidad Educativa,CRM,SIC Huánuco,Pendiente,False,True,Calidad Educativa,
+2026-10-03 12:10:00,E0030,Bruno Castillo,bruno.castillo@example.com,900000030,Huancayo,Cambio de modalidad,Solicita modalidad virtual,Atención y Soluciones,Presencial,UC Huancayo,Resuelto,True,False,,
