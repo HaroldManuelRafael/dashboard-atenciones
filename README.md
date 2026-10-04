@@ -112,7 +112,7 @@ Cuando la aplicación esté implementada:
 streamlit run src/app.py
 ```
 
-Streamlit utilizará por defecto:
+El puerto 8501 se notificará en VS Code sin abrir pestañas automáticamente. Abre el enlace del puerto desde el panel **Ports** cuando quieras ver el dashboard. Streamlit utilizará por defecto:
 
 ```text
 http://localhost:8501
