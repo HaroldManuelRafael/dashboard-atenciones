@@ -1,21 +1,19 @@
 # Dashboard de Atenciones
 
-Dashboard desarrollado en Python para analizar atenciones realizadas a estudiantes.
+Dashboard desarrollado con Python y Streamlit para analizar atenciones registradas mediante Google Forms y almacenadas en Google Sheets. Actualmente puede ejecutarse con datos ficticios locales; la integración productiva con Google Sheets está prevista para una etapa posterior.
 
-La fuente productiva será Google Sheets, alimentada mediante Google Forms. La aplicación tendrá acceso únicamente de lectura.
-
-## Stack
+## Tecnologías
 
 - Python 3.12
 - Streamlit
 - pandas
 - Plotly
-- Google Sheets API
+- Google Sheets API como integración prevista/productiva
 - pytest
 - Ruff
 - Dev Container
 
-## Objetivo
+## Características
 
 Permitir el seguimiento de:
 
@@ -29,7 +27,11 @@ Permitir el seguimiento de:
 - resolución;
 - resolución al primer contacto;
 - casos derivados;
-- principales casuísticas.
+- top de motivos de consulta;
+- estados de resolución;
+- resolución al primer contacto;
+- casos derivados;
+- tabla de detalle.
 
 ## Arquitectura
 
@@ -46,35 +48,7 @@ src/
     └── pages/
 ```
 
-### Domain
-
-Contiene modelos y conceptos del negocio.
-
-No debe depender de Streamlit, Google APIs ni Plotly.
-
-### Application
-
-Contiene transformación de datos, filtros, métricas y casos de uso.
-
-### Infrastructure
-
-Contiene integraciones externas.
-
-Inicialmente:
-
-```text
-Google Sheets API
-```
-
-### Presentation
-
-Contiene la interfaz Streamlit:
-
-- páginas;
-- filtros;
-- KPIs;
-- gráficos;
-- tablas.
+La aplicación separa la lógica de negocio de la interfaz y de las integraciones externas.
 
 ## Desarrollo local
 
@@ -88,35 +62,58 @@ Este archivo contiene únicamente información ficticia.
 
 La integración real con Google Sheets se implementará posteriormente.
 
-## Dev Container
+## Requisitos
+
+### Opción recomendada: Dev Container
 
 El proyecto está preparado para ejecutarse mediante VS Code Dev Containers.
 
-Después de abrir el repositorio:
+Clona el repositorio y ábrelo en VS Code:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd dashboard-atenciones
+```
+
+Después, ejecuta:
 
 ```text
 Dev Containers: Reopen in Container
 ```
 
-las dependencias se instalan automáticamente desde:
+Las dependencias se instalan automáticamente desde:
 
 ```text
 requirements.txt
 ```
 
-## Ejecutar la aplicación
+### Ejecución sin Dev Container
 
-Cuando la aplicación esté implementada:
+```bash
+python -m venv .venv
+```
+
+En macOS/Linux usa `source .venv/bin/activate`; en Windows PowerShell usa `.venv\\Scripts\\Activate.ps1`. Luego instala las dependencias:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+## Ejecución
 
 ```bash
 streamlit run src/app.py
 ```
 
-El puerto 8501 se notificará en VS Code sin abrir pestañas automáticamente. Abre el enlace del puerto desde el panel **Ports** cuando quieras ver el dashboard. Streamlit utilizará por defecto:
+Abre http://localhost:8501 en el navegador.
 
-```text
-http://localhost:8501
-```
+## Datos de ejemplo
+
+`data/sample_atenciones.csv` contiene únicamente datos ficticios. Nunca deben versionarse datos reales de estudiantes.
+
+## Configuración
+
+Usa `.env.example` y `.streamlit/secrets.toml.example` como referencias. No incluyas credenciales reales.
 
 ## Calidad
 
@@ -127,7 +124,7 @@ ruff check .
 pytest
 ```
 
-## Seguridad
+## Seguridad y privacidad
 
 Nunca versionar:
 
@@ -139,38 +136,8 @@ token.json
 client_secret*.json
 ```
 
-La integración con Google Sheets debe utilizar únicamente permisos de lectura.
-
-## Documentación
-
-Los requisitos funcionales se encuentran en:
-
-```text
-docs/requirements.md
-```
-
-El contrato de datos se encuentra en:
-
-```text
-docs/data-contract.md
-```
-
-Las instrucciones de desarrollo para agentes de código se encuentran en:
-
-```text
-AGENTS.md
-```
+No versionar datos personales reales. La integración con Google Sheets debe utilizar únicamente permisos de lectura.
 
 ## Estado actual
 
-Primera etapa:
-
-- [x] Dev Container
-- [x] dependencias Python
-- [x] arquitectura base
-- [x] contrato de datos
-- [x] requisitos funcionales
-- [x] dataset ficticio
-- [ ] implementación del dashboard
-- [ ] tests
-- [ ] integración con Google Sheets
+El dashboard local funciona con el dataset ficticio incluido, filtros, KPIs, gráficos y tabla de detalle. La integración productiva con Google Sheets aún está pendiente.
