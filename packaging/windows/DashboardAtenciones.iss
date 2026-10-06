@@ -8,8 +8,9 @@ AppId={{A1B2C3D4-E5F6-47A8-9012-B3C4D5E6F701}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
-DefaultDirName={autopf}\DashboardAtenciones
+DefaultDirName={localappdata}\Programs\DashboardAtenciones
 DefaultGroupName={#MyAppName}
+PrivilegesRequired=lowest
 OutputDir=..\..\installer
 OutputBaseFilename=DashboardAtenciones-Setup
 Compression=lzma
@@ -21,8 +22,8 @@ UninstallDisplayIcon={app}\{#MyAppExeName}
 Source: "..\..\dist\DashboardAtenciones\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{userprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{userdesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Tasks]
 Name: "desktopicon"; Description: "Crear un acceso directo en el escritorio"; GroupDescription: "Accesos directos:"
