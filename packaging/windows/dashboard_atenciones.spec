@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from PyInstaller.utils.hooks import collect_data_files, collect_submodules
+from PyInstaller.utils.hooks import collect_data_files, collect_submodules, copy_metadata
 
 
 SPEC_DIR = Path(SPECPATH).resolve()
@@ -16,6 +16,7 @@ datas = [
     (str(SRC_PATH), "src"),
     (str(SAMPLE_CSV_PATH), "data"),
     *collect_data_files("streamlit"),
+    *copy_metadata("streamlit"),
 ]
 
 a = Analysis(
