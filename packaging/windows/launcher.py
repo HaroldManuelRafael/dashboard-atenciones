@@ -77,6 +77,7 @@ def _run_streamlit(app_path: Path) -> None:
         str(app_path),
         f"--server.address={HOST}",
         f"--server.port={PORT}",
+        "--global.developmentMode=false",
         "--server.headless=true",
         "--browser.gatherUsageStats=false",
     ]

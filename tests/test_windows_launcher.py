@@ -1,5 +1,7 @@
 import importlib.util
+import sys
 from pathlib import Path
+from types import ModuleType, SimpleNamespace
 
 import pytest
 
@@ -39,3 +41,22 @@ def test_wait_and_open_browser_opens_only_after_server_is_ready(monkeypatch):
     launcher._wait_and_open_browser("http://127.0.0.1:8501")
 
     assert opened == ["http://127.0.0.1:8501"]
+
+
+def test_run_streamlit_disables_development_mode(monkeypatch, tmp_path):
+    captured = {}
+    cli_module = SimpleNamespace(main=lambda: captured.update(argv=sys.argv.copy()))
+    web_module = ModuleType("streamlit.web")
+    web_module.cli = cli_module
+    streamlit_module = ModuleType("streamlit")
+    streamlit_module.web = web_module
+    monkeypatch.setitem(sys.modules, "streamlit", streamlit_module)
+    monkeypatch.setitem(sys.modules, "streamlit.web", web_module)
+
+    launcher._run_streamlit(tmp_path / "app.py")
+
+    assert "--global.developmentMode=false" in captured["argv"]
+    assert "--server.address=127.0.0.1" in captured["argv"]
+    assert "--server.port=8501" in captured["argv"]
+    assert "--server.headless=true" in captured["argv"]
+    assert "--browser.gatherUsageStats=false" in captured["argv"]
