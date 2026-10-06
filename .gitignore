@@ -56,3 +56,9 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# PyInstaller and local Windows installers
+build/
+dist/
+installer/
+*.spec.bak

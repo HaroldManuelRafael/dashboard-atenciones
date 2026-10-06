@@ -138,6 +138,12 @@ No versionar datos personales reales. La integración con Google Sheets debe uti
 
 El dashboard local funciona con el dataset ficticio incluido, filtros, KPIs, gráficos y tabla de detalle. La integración productiva con Google Sheets aún está pendiente.
 
+## Demo para Windows
+
+Existe una versión demostrativa instalable para Windows que funciona sin Python, Docker ni dependencias en la PC destino. Incluye únicamente el dataset ficticio local `data/sample_atenciones.csv`; Google Sheets todavía no está integrado.
+
+Para generar el instalador, ejecuta manualmente el workflow **Build Windows installer** desde GitHub Actions (o crea un tag `v*`). El artifact generado se llama `DashboardAtenciones-Setup.exe`.
+
 ## Licencia
 
 Este proyecto se distribuye bajo la [MIT License](LICENSE).
