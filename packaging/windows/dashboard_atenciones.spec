@@ -1,18 +1,26 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+from pathlib import Path
+
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
 
+SPEC_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SPEC_DIR.parent.parent
+LAUNCHER_PATH = SPEC_DIR / "launcher.py"
+SRC_PATH = PROJECT_ROOT / "src"
+SAMPLE_CSV_PATH = PROJECT_ROOT / "data" / "sample_atenciones.csv"
+
 hiddenimports = collect_submodules("streamlit")
 datas = [
-    ("src", "src"),
-    ("data/sample_atenciones.csv", "data"),
+    (str(SRC_PATH), "src"),
+    (str(SAMPLE_CSV_PATH), "data"),
     *collect_data_files("streamlit"),
 ]
 
 a = Analysis(
-    ["packaging/windows/launcher.py"],
-    pathex=["src"],
+    [str(LAUNCHER_PATH)],
+    pathex=[str(SRC_PATH)],
     binaries=[],
     datas=datas,
     hiddenimports=hiddenimports,
@@ -26,8 +34,6 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
     name="DashboardAtenciones",
     debug=False,
@@ -35,4 +41,13 @@ exe = EXE(
     strip=False,
     upx=True,
     console=False,
+    exclude_binaries=True,
+)
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=True,
+    name="DashboardAtenciones",
 )
