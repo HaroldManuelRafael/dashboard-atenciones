@@ -5,7 +5,7 @@ from pathlib import Path
 from PyInstaller.utils.hooks import collect_data_files, collect_submodules
 
 
-SPEC_DIR = Path(__file__).resolve().parent
+SPEC_DIR = Path(SPECPATH).resolve()
 PROJECT_ROOT = SPEC_DIR.parent.parent
 LAUNCHER_PATH = SPEC_DIR / "launcher.py"
 SRC_PATH = PROJECT_ROOT / "src"
