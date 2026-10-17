@@ -40,7 +40,7 @@ google-credentials*.json
 data/*.csv
 data/*.xlsx
 data/*.xls
-!data/sample_atenciones.csv
+!data/sample_atenciones.xlsx
 
 # IDE / editor
 .vscode/
