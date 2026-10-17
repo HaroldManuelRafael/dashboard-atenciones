@@ -104,8 +104,8 @@ def normalize_atenciones(data: pd.DataFrame) -> pd.DataFrame:
 
 
 def load_atenciones(path: str | Path) -> pd.DataFrame:
-    """Load the local CSV while preserving identifier columns as text."""
-    data = pd.read_csv(path, dtype={"codigo_estudiante": "string", "celular": "string"})
+    """Load the local Excel workbook while preserving identifier columns as text."""
+    data = pd.read_excel(path, dtype={"codigo_estudiante": "string", "celular": "string"})
     return normalize_atenciones(data)
 
 

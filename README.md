@@ -48,10 +48,10 @@ La aplicación separa la lógica de negocio de la interfaz y de las integracione
 
 ## Desarrollo local
 
-Durante la primera etapa se utiliza:
+Durante la primera etapa se utiliza un archivo Excel editable:
 
 ```text
-data/sample_atenciones.csv
+data/sample_atenciones.xlsx
 ```
 
 Este archivo contiene únicamente información ficticia.
@@ -105,7 +105,7 @@ Abre http://localhost:8501 en el navegador.
 
 ## Datos de ejemplo
 
-`data/sample_atenciones.csv` contiene únicamente datos ficticios. Nunca deben versionarse datos reales de estudiantes.
+En una instalación empaquetada, el archivo editable se encuentra en `%APPDATA%\\DashboardAtenciones\\data\\atenciones.xlsx`. Puede editarse o reemplazarse manteniendo el mismo esquema. Contiene únicamente datos ficticios; nunca deben versionarse datos reales de estudiantes.
 
 ## Configuración
 
@@ -140,7 +140,7 @@ El dashboard local funciona con el dataset ficticio incluido, filtros, KPIs, gr�
 
 ## Demo para Windows
 
-Existe una versión demostrativa instalable para Windows que funciona sin Python, Docker ni dependencias en la PC destino. Incluye únicamente el dataset ficticio local `data/sample_atenciones.csv`; Google Sheets todavía no está integrado.
+Existe una versión demostrativa instalable para Windows que funciona sin Python, Docker ni dependencias en la PC destino. Incluye únicamente el dataset ficticio local `data/sample_atenciones.xlsx`; Google Sheets todavía no está integrado.
 
 Para generar el instalador, ejecuta manualmente el workflow **Build Windows installer** desde GitHub Actions (o crea un tag `v*`). El artifact generado se llama `DashboardAtenciones-Setup.exe`.
 

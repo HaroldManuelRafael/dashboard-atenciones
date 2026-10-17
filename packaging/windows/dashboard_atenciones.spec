@@ -9,12 +9,12 @@ SPEC_DIR = Path(SPECPATH).resolve()
 PROJECT_ROOT = SPEC_DIR.parent.parent
 LAUNCHER_PATH = SPEC_DIR / "launcher.py"
 SRC_PATH = PROJECT_ROOT / "src"
-SAMPLE_CSV_PATH = PROJECT_ROOT / "data" / "sample_atenciones.csv"
+SAMPLE_XLSX_PATH = PROJECT_ROOT / "data" / "sample_atenciones.xlsx"
 
 hiddenimports = collect_submodules("streamlit")
 datas = [
     (str(SRC_PATH), "src"),
-    (str(SAMPLE_CSV_PATH), "data"),
+    (str(SAMPLE_XLSX_PATH), "data"),
     *collect_data_files("streamlit"),
     *copy_metadata("streamlit"),
 ]

@@ -1,6 +1,7 @@
 """Main dashboard page."""
 
 import os
+import zipfile
 
 import streamlit as st
 
@@ -22,7 +23,7 @@ def render_dashboard() -> None:
     try:
         data_path = resolve_data_source()
         data = _load_data(data_path)
-    except (OSError, ValueError, UnicodeError) as error:
+    except (OSError, ValueError, UnicodeError, ImportError, zipfile.BadZipFile) as error:
         st.error(f"No se pudieron cargar las atenciones. Revisa el archivo de datos. ({error})")
         return
 

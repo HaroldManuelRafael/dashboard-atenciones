@@ -18,18 +18,18 @@ def test_log_path_uses_local_app_data(monkeypatch, tmp_path):
     assert launcher._log_path() == tmp_path / "DashboardAtenciones" / "logs" / "launcher.log"
 
 
-def test_validate_resources_requires_app_and_sample_csv(tmp_path):
+def test_validate_resources_requires_app_and_sample_xlsx(tmp_path):
     (tmp_path / "src").mkdir()
     (tmp_path / "data").mkdir()
     app_path = tmp_path / "src" / "app.py"
-    sample_path = tmp_path / "data" / "sample_atenciones.csv"
+    sample_path = tmp_path / "data" / "sample_atenciones.xlsx"
     app_path.write_text("", encoding="utf-8")
     sample_path.write_text("", encoding="utf-8")
 
     assert launcher._validate_resources(tmp_path) == (app_path, sample_path)
 
     sample_path.unlink()
-    with pytest.raises(FileNotFoundError, match="sample_atenciones.csv"):
+    with pytest.raises(FileNotFoundError, match="sample_atenciones.xlsx"):
         launcher._validate_resources(tmp_path)
 
 

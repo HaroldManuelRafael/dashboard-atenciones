@@ -53,7 +53,7 @@ def _configure_logging() -> None:
 
 
 def _resource_paths(bundle_root: Path) -> tuple[Path, Path]:
-    return bundle_root / "src" / "app.py", bundle_root / "data" / "sample_atenciones.csv"
+    return bundle_root / "src" / "app.py", bundle_root / "data" / "sample_atenciones.xlsx"
 
 
 def _validate_resources(bundle_root: Path) -> tuple[Path, Path]:
@@ -61,7 +61,7 @@ def _validate_resources(bundle_root: Path) -> tuple[Path, Path]:
     LOGGER.info("Executable: %s", sys.executable)
     LOGGER.info("Bundle root: %s", bundle_root)
     LOGGER.info("Application path: %s (exists=%s)", app_path, app_path.is_file())
-    LOGGER.info("Sample CSV path: %s (exists=%s)", sample_path, sample_path.is_file())
+    LOGGER.info("Sample Excel path: %s (exists=%s)", sample_path, sample_path.is_file())
     missing = [str(path) for path in (app_path, sample_path) if not path.is_file()]
     if missing:
         raise FileNotFoundError("Faltan recursos requeridos en el bundle: " + ", ".join(missing))

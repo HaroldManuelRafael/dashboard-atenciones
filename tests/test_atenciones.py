@@ -10,7 +10,7 @@ from application.services.atenciones import (
     normalize_atenciones,
 )
 
-SAMPLE_PATH = "data/sample_atenciones.csv"
+SAMPLE_PATH = "data/sample_atenciones.xlsx"
 
 
 def test_loads_sample_and_preserves_student_codes_as_text():
