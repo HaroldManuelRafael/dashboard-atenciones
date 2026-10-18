@@ -1,6 +1,6 @@
 # Dashboard de Atenciones
 
-Dashboard desarrollado con Python y Streamlit para analizar atenciones registradas mediante Google Forms y almacenadas en Google Sheets. Actualmente puede ejecutarse con datos ficticios locales; la integración productiva con Google Sheets está prevista para una etapa posterior.
+Dashboard desarrollado con Python y Streamlit para analizar atenciones registradas mediante Google Forms. Puede usar datos ficticios locales en Excel o una hoja de Google Sheets en modo solo lectura.
 
 ## Tecnologías
 
@@ -8,7 +8,7 @@ Dashboard desarrollado con Python y Streamlit para analizar atenciones registrad
 - Streamlit
 - pandas
 - Plotly
-- Google Sheets API como integración prevista/productiva
+- Google Sheets API en modo solo lectura
 - pytest
 - Ruff
 - Dev Container
