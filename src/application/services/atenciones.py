@@ -109,6 +109,11 @@ def load_atenciones(path: str | Path) -> pd.DataFrame:
     return normalize_atenciones(data)
 
 
+def normalize_google_sheet(data: pd.DataFrame) -> pd.DataFrame:
+    """Normalize a DataFrame already fetched and mapped from Google Sheets."""
+    return normalize_atenciones(data)
+
+
 def filter_atenciones(
     data: pd.DataFrame,
     start_date: date | None = None,

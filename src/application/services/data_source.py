@@ -1,4 +1,4 @@
-"""Resolve the editable Excel workbook used by the dashboard."""
+"""Select and resolve the dashboard data source."""
 
 from __future__ import annotations
 
@@ -11,6 +11,10 @@ APP_NAME = "DashboardAtenciones"
 DATA_FILE_NAME = "atenciones.xlsx"
 SAMPLE_FILE_NAME = "sample_atenciones.xlsx"
 EXPLICIT_DATA_PATH_ENV = "DASHBOARD_ATENCIONES_DATA_PATH"
+DATA_SOURCE_ENV = "DASHBOARD_DATA_SOURCE"
+GOOGLE_SPREADSHEET_ID_ENV = "GOOGLE_SPREADSHEET_ID"
+GOOGLE_WORKSHEET_NAME_ENV = "GOOGLE_WORKSHEET_NAME"
+GOOGLE_SERVICE_ACCOUNT_FILE_ENV = "GOOGLE_SERVICE_ACCOUNT_FILE"
 
 
 def _bundle_root() -> Path:
@@ -39,3 +43,11 @@ def resolve_data_source() -> Path:
     if not target.exists():
         shutil.copyfile(_bundle_root() / "data" / SAMPLE_FILE_NAME, target)
     return target
+
+
+def configured_data_source() -> str:
+    """Return the configured source mode, defaulting safely to local."""
+    source = os.environ.get(DATA_SOURCE_ENV, "local").strip().casefold()
+    if source not in {"local", "google_sheets"}:
+        raise ValueError("DASHBOARD_DATA_SOURCE debe ser 'local' o 'google_sheets'.")
+    return source

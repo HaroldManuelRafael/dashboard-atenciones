@@ -56,7 +56,7 @@ data/sample_atenciones.xlsx
 
 Este archivo contiene únicamente información ficticia.
 
-La integración real con Google Sheets se implementará posteriormente.
+La fuente predeterminada es local. Puede seleccionarse Google Sheets con `DASHBOARD_DATA_SOURCE=google_sheets`; requiere configurar el ID del spreadsheet, el nombre de la pestaña y una cuenta de servicio con permisos Viewer. La integración usa únicamente lectura.
 
 ## Requisitos
 
@@ -109,7 +109,7 @@ En una instalación empaquetada, el archivo editable se encuentra en `%APPDATA%\
 
 ## Configuración
 
-Usa `.env.example` y `.streamlit/secrets.toml.example` como referencias. No incluyas credenciales reales.
+Usa `.env.example` como referencia. Para Google Sheets configura `GOOGLE_SPREADSHEET_ID`, `GOOGLE_WORKSHEET_NAME` y `GOOGLE_SERVICE_ACCOUNT_FILE`. No incluyas credenciales reales.
 
 ## Calidad
 
@@ -136,11 +136,11 @@ No versionar datos personales reales. La integración con Google Sheets debe uti
 
 ## Estado actual
 
-El dashboard local funciona con el dataset ficticio incluido, filtros, KPIs, gráficos y tabla de detalle. La integración productiva con Google Sheets aún está pendiente.
+El dashboard funciona con el dataset local ficticio o, mediante configuración, con Google Sheets en modo solo lectura; filtros, KPIs, gráficos y tabla de detalle son comunes a ambas fuentes.
 
 ## Demo para Windows
 
-Existe una versión demostrativa instalable para Windows que funciona sin Python, Docker ni dependencias en la PC destino. Incluye únicamente el dataset ficticio local `data/sample_atenciones.xlsx`; Google Sheets todavía no está integrado.
+Existe una versión demostrativa instalable para Windows que funciona sin Python, Docker ni dependencias en la PC destino. Incluye únicamente el dataset ficticio local `data/sample_atenciones.xlsx`; Google Sheets requiere configuración externa de credenciales y no se empaqueta.
 
 Para generar el instalador, ejecuta manualmente el workflow **Build Windows installer** desde GitHub Actions (o crea un tag `v*`). El artifact generado se llama `DashboardAtenciones-Setup.exe`.
 

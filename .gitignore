@@ -30,6 +30,8 @@ htmlcov/
 
 # Google credentials / tokens
 credentials.json
+service-account*.json
+credentials*.json
 client_secret*.json
 token.json
 google-credentials*.json

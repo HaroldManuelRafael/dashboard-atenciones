@@ -43,3 +43,14 @@ def test_packaged_source_requires_appdata(monkeypatch):
     monkeypatch.setattr(data_source.sys, "frozen", True, raising=False)
     with pytest.raises(OSError, match="APPDATA"):
         data_source.resolve_data_source()
+
+
+def test_configured_source_defaults_to_local(monkeypatch):
+    monkeypatch.delenv(data_source.DATA_SOURCE_ENV, raising=False)
+    assert data_source.configured_data_source() == "local"
+
+
+def test_configured_source_rejects_unknown_value(monkeypatch):
+    monkeypatch.setenv(data_source.DATA_SOURCE_ENV, "csv")
+    with pytest.raises(ValueError, match="local.*google_sheets"):
+        data_source.configured_data_source()
